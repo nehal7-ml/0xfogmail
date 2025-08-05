@@ -1,0 +1,355 @@
+@tailwind base;
+@tailwind utilities;
+
+/* REMOVE this line:
+@custom-variant dark (&:is(.dark *));
+*/
+
+
+:root {
+  --font-size: 14px;
+  /* Light theme colors - now the default */
+  --background: #ffffff;
+  --foreground: #0a0b0f;
+  --card: #f8fafc;
+  --card-foreground: #0a0b0f;
+  --popover: #ffffff;
+  --popover-foreground: #0a0b0f;
+  --primary: #0066cc;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #0066cc;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #4338ca;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: transparent;
+  --input-background: #ffffff;
+  --switch-background: #e2e8f0;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #0066cc;
+  --chart-1: #0066cc;
+  --chart-2: #059669;
+  --chart-3: #4338ca;
+  --chart-4: #d97706;
+  --chart-5: #7c3aed;
+  --radius: 0.75rem;
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #0a0b0f;
+  --sidebar-primary: #0066cc;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e2e8f0;
+  --sidebar-accent-foreground: #0066cc;
+  --sidebar-border: rgba(0, 102, 204, 0.1);
+  --sidebar-ring: #0066cc;
+  --success: #059669;
+  --success-foreground: #ffffff;
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
+  --info: #0284c7;
+  --info-foreground: #ffffff;
+  --gradient-primary: linear-gradient(135deg, #0066cc 0%, #4338ca 100%);
+  --gradient-secondary: linear-gradient(135deg, #059669 0%, #0066cc 100%);
+  --glow-primary: 0 0 20px rgba(0, 102, 204, 0.3);
+  --glow-accent: 0 0 20px rgba(67, 56, 202, 0.3);
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0b0f;
+  --card-foreground: #ffffff;
+  --popover: #111827;
+  --popover-foreground: #ffffff;
+  --primary: #00ff88;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #00ff88;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --accent: #8b5cf6;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 255, 136, 0.2);
+  --input: #1a1a1a;
+  --ring: #00ff88;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #00ff88;
+  --chart-2: #00d4ff;
+  --chart-3: #8b5cf6;
+  --chart-4: #f59e0b;
+  --chart-5: #ec4899;
+  --sidebar: #000000;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00ff88;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #00ff88;
+  --sidebar-border: rgba(0, 255, 136, 0.1);
+  --sidebar-ring: #00ff88;
+  --success: #00ff88;
+  --success-foreground: #000000;
+  --warning: #ffb000;
+  --warning-foreground: #000000;
+  --info: #00d4ff;
+  --info-foreground: #000000;
+  --gradient-primary: linear-gradient(135deg, #00ff88 0%, #8b5cf6 100%);
+  --gradient-secondary: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  --glow-primary: 0 0 25px rgba(0, 255, 136, 0.4);
+  --glow-accent: 0 0 25px rgba(139, 92, 246, 0.4);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Light theme background gradient - now default */
+  body:not(.dark) {
+    background: radial-gradient(ellipse at center, rgba(0, 102, 204, 0.03) 0%, transparent 50%);
+  }
+
+  /* Dark theme background gradient - applied only when .dark class is present */
+  .dark body {
+    background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+  }
+
+  /* Web3 Utility Classes */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .web3-border {
+    border: 1px solid;
+    border-image: linear-gradient(45deg, var(--primary), var(--accent)) 1;
+  }
+
+  .web3-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .dark .web3-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .web3-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .web3-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .web3-button:hover::before {
+    left: 100%;
+  }
+
+  .web3-input {
+    background: var(--input-background);
+    transition: all 0.3s ease;
+  }
+
+  .web3-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+  }
+
+  .dark .web3-input:focus {
+    box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2);
+  }
+}
+
+/**
+ * Base typography with responsive font scaling
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: calc(var(--font-size) * 2);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      background: var(--gradient-primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+      font-size: calc(var(--font-size) * 1.5);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--foreground);
+    }
+
+    h3 {
+      font-size: calc(var(--font-size) * 1.25);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--foreground);
+    }
+
+    h4 {
+      font-size: calc(var(--font-size) * 1.1);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--foreground);
+    }
+
+    p {
+      font-size: var(--font-size);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+      color: var(--foreground);
+    }
+
+    label {
+      font-size: var(--font-size);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--foreground);
+    }
+
+    button {
+      font-size: var(--font-size);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--font-size);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    textarea {
+      font-size: var(--font-size);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Scrollbar Styling for both themes */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+  box-shadow: var(--glow-primary);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--muted);
+}
+
+/* Light theme specific adjustments - now default */
+:not(.dark) .gradient-primary {
+  background: var(--gradient-primary);
+}
+
+:not(.dark) h1 {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
