@@ -32,7 +32,7 @@ A modern, responsive email web application built with React, TypeScript, and Tai
 1. Clone the repository
 ```bash
 git clone <repository-url>
-cd promail-email-app
+cd 0xfogmail
 ```
 
 2. Install dependencies
