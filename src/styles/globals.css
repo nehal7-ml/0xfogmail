@@ -1,10 +1,7 @@
-@tailwind base;
-@tailwind utilities;
-
+@import "tailwindcss";
 /* REMOVE this line:
 @custom-variant dark (&:is(.dark *));
 */
-
 
 :root {
   --font-size: 14px;
@@ -163,12 +160,20 @@
 
   /* Light theme background gradient - now default */
   body:not(.dark) {
-    background: radial-gradient(ellipse at center, rgba(0, 102, 204, 0.03) 0%, transparent 50%);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 102, 204, 0.03) 0%,
+      transparent 50%
+    );
   }
 
   /* Dark theme background gradient - applied only when .dark class is present */
   .dark body {
-    background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 255, 136, 0.05) 0%,
+      transparent 50%
+    );
   }
 
   /* Web3 Utility Classes */
@@ -196,12 +201,16 @@
   .web3-card {
     background: var(--card);
     border: 1px solid var(--border);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
   }
 
   .dark .web3-card {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .web3-button {
@@ -211,13 +220,18 @@
   }
 
   .web3-button::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
     transition: left 0.5s;
   }
 
@@ -353,3 +367,4 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
